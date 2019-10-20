@@ -1,0 +1,3 @@
+{
+    "_comment": "This is default header configuration. URL specific headers can be configured by prepending the url to footer.json like 'product.create.header.json'"
+}

@@ -1,0 +1,3 @@
+{
+    "_comment": "This is default footer configuration. URL specific footers can be configured by prepending the url to footer.json like 'product.create.footer.json'"
+}
