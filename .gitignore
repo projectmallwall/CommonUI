@@ -22,6 +22,7 @@ speed-measure-plugin*.json
 *.launch
 .settings/
 *.sublime-workspace
+/.theia
 
 # IDE - VSCode
 .vscode/*
@@ -39,9 +40,9 @@ speed-measure-plugin*.json
 npm-debug.log
 yarn-error.log
 testem.log
+package-lock.json
 /typings
 
 # System Files
 .DS_Store
 Thumbs.db
-package-lock.json
