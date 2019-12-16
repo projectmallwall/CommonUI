@@ -1,0 +1,63 @@
+{
+  "section12": [
+    {
+      name: "customerName",
+      type: "text",
+      "span": 12,
+      getAccessor: "customer.name / used to fetch data",
+      setAccessor: "firstname",
+      "validations": [
+        {
+            "name": "length",
+            "condition": {
+                "min": {
+                  "value": 1,
+                  "message": "error.message.length.min"
+                },
+                "max": {
+                    "value": 50,
+                    "message": "error.message.length.max"
+                }
+            }
+        }
+      ]
+    }, {
+      name: "country",
+      type: "dropdown",
+      getAccessor: "customer.country",
+      setAccessor: "country",
+      metadata: ["India", "China", "USA"],
+      validations: [],
+      placeholder: "Enter the country",
+      tooltip: "Enter the country",
+      maxRecords: "50 (optional)",
+      indexParams: "['index', 'maxLimit'] (Will be sent as {'index': 1, 'maxLimit': 50})"
+    }, {
+      name: "state",
+      type: "dropdown",
+      getAccessor: "customer.state",
+      setAccessor: "state",
+      dependentFields: ["country", "This field should be unique and available within the form."],
+      metadataUrl: "/customer/stateList  / This is get call. The data will go as query params"
+    }, {
+      name: "address",
+      type: "textArea",
+      getAccessor: "customer.address",
+      setAccessor: "address"
+    }, {
+      name: "gender",
+      type: "radio",
+      getAccessor: "customer.gender",
+      setAccessor: "customer.gender"
+    },
+    {
+      name: "save",
+      type: "submit/cancel/reset/button/anchor",
+      submitUrl: "/customer/save / used to create, update or delete the section data."
+      formIds: ["section1", "section12"]
+    }
+  ],
+  "section13": [
+    //Discuss on what components will be there and who will pick what.
+  ]
+}

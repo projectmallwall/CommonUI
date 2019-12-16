@@ -1,0 +1,7 @@
+{
+  customer: {
+    name: "John",
+    address: "103, Skywalk",
+    gender: "Male"
+  }
+}

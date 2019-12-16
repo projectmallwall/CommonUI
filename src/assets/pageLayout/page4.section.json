@@ -1,0 +1,63 @@
+{
+  _comment: "New json for the page layout. If url is /customer it will pick customer.section.json for layout of body.",
+  layout: [
+    {
+      id: "section id is compulsory for form",
+      type: "content/form/popover",
+      col: {
+        count: 3,
+        ratio: {
+          _comment: "Sould add up in multiple of 12 only."
+          lg: "6:3:3",
+          md: "6:3:3",
+          sm: "12:6:6",
+          xs: "12:12:12"
+        },
+        autoPlace: "true/false"
+      },
+      dataUrl : "This could be there in parent and child sections simultaneously. Closest parent url will be picked.",
+      fieldUrl : "Same as data url, gives the fields list.",
+      sectionList: [{
+        id: "section12",
+        type: "form",
+        col: {},
+        dataUrl : "This is a child section and the url here will be picked.",
+        fieldUrl : "Same as data url, gives the fields list."
+        fieldAccessor: "section12 / Each leaf section in the section tree should have fieldAccessor."
+      },
+      {
+        id: "section id is compulsory for form",
+        type: "content/form",
+        col: {
+          count: 3,
+          ratio: {
+            _comment: "Sould add up in multiple of 12 only."
+            lg: "6:3:3",
+            md: "6:3:3",
+            sm: "12:6:6",
+            xs: "12:12:12"
+          },
+          autoPlace: "true/false"
+        },
+        fieldList: [{
+            name: "customerName",
+            type: "text",
+            accessor: "customer.name"
+          }, {
+            name: "address",
+            type: "textArea",
+            accessor: "customer.address"
+          }, {
+            name: "gender",
+            type: "radio",
+            accessor: "customer.gender"
+          },
+          {
+            name: "save",
+            type: "submit/cancel/reset",
+            formIds: ["section1", "section12"]
+          }]
+      }, {}]
+    }
+  ]
+}
