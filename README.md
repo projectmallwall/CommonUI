@@ -11,3 +11,10 @@ Other modules are elements module, section module.
 Stylers and validators components / directives to be included in section module.
 All services and state managers to be included in renderer module as it is the core module and everything 
 will be handled from there.
+
+bootstrap:
+bootstrap for css.
+ngx-bootstrap supports Bootstrap 3 and 4.
+ng-bootstrap supports Bootstrap 4 and requires Angular 5+.
+
+That's why we have include ng-bootstrap in our project.
