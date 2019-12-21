@@ -8,6 +8,7 @@ import { SectionComponent } from './section/section.component';
   declarations: [SectionComponent],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [SectionComponent]
 })
 export class SectionModule { }

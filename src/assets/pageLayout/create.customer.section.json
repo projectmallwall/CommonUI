@@ -1,0 +1,42 @@
+{
+  "layout": [
+    {
+      "id": "sec001",
+      "type": "content/form/popover",
+      "col": {
+        "count": 3,
+        "ratio": {
+          "lg": "6:3:3",
+          "md": "6:3:3",
+          "sm": "12:6:6",
+          "xs": "12:12:12"
+        },
+        "autoPlace": "true/false"
+      },
+      "dataUrl" : "This could be there in parent and child sections simultaneously. Closest parent url will be picked.",
+      "fieldUrl" : "Same as data url, gives the fields list.",
+      "sectionList": [{
+        "id": "section12",
+        "type": "form",
+        "col": {},
+        "dataUrl" : "This is a child section and the url here will be picked.",
+        "fieldUrl" : "Same as data url, gives the fields list.",
+        "fieldAccessor": "section12 / Each leaf section in the section tree should have fieldAccessor."
+      },
+      {
+        "id": "section id is compulsory for form",
+        "type": "content/form",
+        "col": {
+          "count": 3,
+          "ratio": {
+            "lg": "6:3:3",
+            "md": "6:3:3",
+            "sm": "12:6:6",
+            "xs": "12:12:12"
+          },
+          "autoPlace": "true/false"
+        }
+      }, {}]
+    }
+  ]
+}

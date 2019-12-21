@@ -8,9 +8,6 @@ import { FooterComponent } from './renderer/footer/footer.component';
 
 const routes: Routes = [{
   path: '',
-  component: BodyComponent
-}, {
-  path: '',
   component: HeaderComponent,
   outlet: 'header'
 }, {
@@ -21,6 +18,9 @@ const routes: Routes = [{
   path: '',
   component: FooterComponent,
   outlet: 'footer'
+}, {
+  path: '**',
+  component: BodyComponent
 }];
 
 @NgModule({
