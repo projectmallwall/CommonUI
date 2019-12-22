@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { CommonService } from 'src/app/common.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { SectionComponent } from '../../section/section/section.component';
+import { SectionComponent } from '@section/section/section.component';
 
 @Component({
   selector: 'app-body',
