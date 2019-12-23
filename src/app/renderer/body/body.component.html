@@ -1,1 +1,12 @@
-<p>body works!</p>
+<div>
+  <div *ngIf="pageDoesNotExist">This page does not exist.</div>
+
+  <p>body works!</p>
+  Current URL : {{currentUrl}}
+  No. of sections: {{sectionsList.length}}
+
+  <div *ngFor="let section of sectionsList">
+    {{section.id}}
+    <app-section></app-section>
+  </div>
+</div>
