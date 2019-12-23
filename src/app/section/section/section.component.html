@@ -1,1 +1,8 @@
-<p>section works!</p>
+<div class="container">
+  <div class="row">
+    <div ngClass="{{columnStructure.classes.xs}} {{columnStructure.classes.sm}} {{columnStructure.classes.md}} {{columnStructure.classes.lg}}"
+        *ngFor="let field of structuralData.fieldList; index as i">
+      {{ field.name }}
+    </div>
+  </div>
+</div>
