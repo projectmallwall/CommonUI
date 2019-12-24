@@ -1,1 +1,15 @@
-<p>section works!</p>
+<div class="container-fluid">
+  <div class="row" *ngIf="!containSectionChild">
+    <div ngClass="{{columnStructure.classes.xs[i]}} {{columnStructure.classes.sm[i]}} {{columnStructure.classes.md[i]}} {{columnStructure.classes.lg[i]}}"
+        *ngFor="let field of section.fieldList; index as i">
+        <!--list of widgets will go here-->
+        <app-input-text *ngIf="field.type === 'text'"></app-input-text>
+        <div *ngIf="field.type !== 'text'">{{ field.name }}</div>
+    </div>
+  </div>
+  <div *ngIf="containSectionChild">
+    <div *ngFor="let childSection of section.sectionList; index as i">
+      <app-section [section]="childSection"></app-section>
+    </div>
+  </div>
+</div>

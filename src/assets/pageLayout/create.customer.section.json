@@ -6,10 +6,10 @@
       "col": {
         "count": 3,
         "ratio": {
-          "lg": "6:3:3",
-          "md": "6:3:3",
-          "sm": "12:6:6",
-          "xs": "12:12:12"
+          "lg": "6:6",
+          "md": "6:3",
+          "sm": "12:6",
+          "xs": "12:12"
         },
         "autoPlace": "true/false"
       },
@@ -18,7 +18,16 @@
       "sectionList": [{
         "id": "section12",
         "type": "form",
-        "col": {},
+        "col": {
+          "count": 3,
+          "ratio": {
+            "lg": "6:3:3",
+            "md": "6:3:3",
+            "sm": "12:6:6",
+            "xs": "12:12:12"
+          },
+          "autoPlace": "true/false"
+        },
         "dataUrl" : "This is a child section and the url here will be picked.",
         "fieldUrl" : "Same as data url, gives the fields list.",
         "fieldAccessor": "section12 / Each leaf section in the section tree should have fieldAccessor."
@@ -36,7 +45,140 @@
           },
           "autoPlace": "true/false"
         }
-      }, {}]
+      }]
+    },
+    {
+      "id": "section id is compulsory for form",
+      "type": "content/form",
+      "col": {
+          "count": 3,
+          "ratio": {
+            "_comment": "Sould add up in multiple of 12 only.",
+            "lg": "2:3:4:3",
+            "md": "6:3:1:2",
+            "sm": "12:6:3:3",
+            "xs": "12:12:6:6"
+          },
+          "autoPlace": "true/false"
+      },
+      "fieldList": [
+          {
+            "name": "customerName",
+            "type": "text",
+            "accessor": "customer.name"
+          },
+          {
+            "name": "address",
+            "type": "textArea",
+            "accessor": "customer.address"
+          },
+          {
+            "name": "gender",
+            "type": "radio",
+            "accessor": "customer.gender"
+          },
+          {
+            "name": "save",
+            "type": "submit/cancel/reset",
+            "formIds": [
+                "section1",
+                "section12"
+            ]
+          }
+      ]
+    },
+    {
+      "id": "section 3",
+      "type": "content/form",
+      "col": {
+          "count": 3,
+          "ratio": {
+            "_comment": "Sould add up in multiple of 12 only.",
+            "lg": "6:6",
+            "md": "6:6",
+            "sm": "12:12",
+            "xs": "12:12"
+          },
+          "autoPlace": "true/false"
+      },
+      "fieldList": [
+          {
+            "name": "customerName",
+            "type": "text",
+            "accessor": "customer.name"
+          },
+          {
+            "name": "address",
+            "type": "textArea",
+            "accessor": "customer.address"
+          }
+      ],
+      "sectionList": [
+      {
+          "id": "child section 1",
+          "type": "content/form",
+          "col": {
+            "count": 3,
+            "ratio": {
+                "_comment": "Sould add up in multiple of 12 only.",
+                "lg": "6:3:3",
+                "md": "6:3:3",
+                "sm": "12:6:6",
+                "xs": "12:12:12"
+            },
+            "autoPlace": "true/false"
+          },
+          "fieldList": [
+            {
+                "name": "customerName",
+                "type": "text",
+                "accessor": "customer.name"
+            },
+            {
+                "name": "address",
+                "type": "textArea",
+                "accessor": "customer.address"
+            },
+            {
+                "name": "gender",
+                "type": "radio",
+                "accessor": "customer.gender"
+            }
+          ]
+      },
+      {
+          "id": "child section 2",
+          "type": "content/form",
+          "col": {
+            "count": 3,
+            "ratio": {
+                "_comment": "Sould add up in multiple of 12 only.",
+                "lg": "6:3:3",
+                "md": "6:3:3",
+                "sm": "12:6:6",
+                "xs": "12:12:12"
+            },
+            "autoPlace": "true/false"
+          },
+          "fieldList": [
+            {
+                "name": "customerName",
+                "type": "text",
+                "accessor": "customer.name"
+            },
+            {
+                "name": "address",
+                "type": "textArea",
+                "accessor": "customer.address"
+            },
+            {
+                "name": "gender",
+                "type": "radio",
+                "accessor": "customer.gender"
+            }
+          ]
+      }
+    ]
     }
   ]
 }
