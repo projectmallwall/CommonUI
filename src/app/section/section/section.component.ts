@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { InputTextComponent } from '../../elements/input-text/input-text.component';
 
 @Component({
   selector: 'app-section',
@@ -6,39 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./section.component.scss']
 })
 export class SectionComponent implements OnInit {
-  structuralData: any = {
-        id: "section id is compulsory for form",
-        type: "content/form",
-        col: {
-          count: 3,
-          ratio: {
-            _comment: "Sould add up in multiple of 12 only.",
-            lg: "6:3:3",
-            md: "6:3:3",
-            sm: "12:6:6",
-            xs: "12:12:12"
-          },
-          autoPlace: "true/false"
-        },
-        fieldList: [{
-            name: "customerName",
-            type: "text",
-            accessor: "customer.name"
-          }, {
-            name: "address",
-            type: "textArea",
-            accessor: "customer.address"
-          }, {
-            name: "gender",
-            type: "radio",
-            accessor: "customer.gender"
-          },
-          {
-            name: "save",
-            type: "submit/cancel/reset",
-            formIds: ["section1", "section12"]
-          }]
-      };;
+  @Input('section') section: any;
   /*columnStructure: {
     noOfColumn: number,
     classes: {
@@ -48,12 +17,19 @@ export class SectionComponent implements OnInit {
       lg: Array<string>
     }
   };*/
-  columnStructure: any = {};
+  columnStructure: any;
+  containSectionChild: boolean;
+  requiredParameters: Array<String>;
 
   constructor() {
+    this.columnStructure = {};
+    this.containSectionChild = false;
+    this.requiredParameters = ['col', 'id'];
   }
 
   ngOnInit() {
+    this.checkForRequiredParameters();
+    this.containSectionChild = this.section.sectionList && this.section.sectionList.length ? true: false;
     this.breakColumnForDevices();
   }
 
@@ -68,34 +44,37 @@ export class SectionComponent implements OnInit {
   private convertColumnRatioIntoClass(arr: Array<string>, type: string): Array<string> {
     let resultArr: Array<string> = [];
     for (let index: number = 0; index < arr.length; index++) {
-      resultArr[index] = "col-" + type + arr[index];
+      resultArr[index] = "col-" + type + "-" + arr[index];
     }
 
     return resultArr;
   }
 
   private checkForRequiredParameters(): void {
-
+    for (let key in this.requiredParameters) {
+      if (!this.section.hasOwnProperty(key)) {
+        console.log("Missing key - " + key);
+      }
+    }
   }
 
   private breakColumnForDevices(): void {
-    this.checkForRequiredParameters();
-    this.columnStructure.noOfColumn = this.convertStringIntoNumber(this.structuralData.col.count);
+    this.columnStructure.noOfColumn = this.convertStringIntoNumber(this.section.col.count);
     this.columnStructure.classes = {};
-    if (this.structuralData.col.ratio.xs) {
-      this.columnStructure.classes.xs = this.convertColumnRatioIntoClass(this.structuralData.col.ratio.xs.split(':'), 'xs');
+    if (this.section.col.ratio.xs) {
+      this.columnStructure.classes.xs = this.convertColumnRatioIntoClass(this.section.col.ratio.xs.split(':'), 'xs');
     }
 
-    if (this.structuralData.col.ratio.sm) {
-      this.columnStructure.classes.sm = this.convertColumnRatioIntoClass(this.structuralData.col.ratio.sm.split(':'), 'sm');
+    if (this.section.col.ratio.sm) {
+      this.columnStructure.classes.sm = this.convertColumnRatioIntoClass(this.section.col.ratio.sm.split(':'), 'sm');
     }
 
-    if (this.structuralData.col.ratio.md) {
-      this.columnStructure.classes.md = this.convertColumnRatioIntoClass(this.structuralData.col.ratio.md.split(':'), 'md');
+    if (this.section.col.ratio.md) {
+      this.columnStructure.classes.md = this.convertColumnRatioIntoClass(this.section.col.ratio.md.split(':'), 'md');
     }
 
-    if (this.structuralData.col.ratio.lg) {
-      this.columnStructure.classes.lg = this.convertColumnRatioIntoClass(this.structuralData.col.ratio.lg.split(':'), 'lg');
+    if (this.section.col.ratio.lg) {
+      this.columnStructure.classes.lg = this.convertColumnRatioIntoClass(this.section.col.ratio.lg.split(':'), 'lg');
     }
   }
 
