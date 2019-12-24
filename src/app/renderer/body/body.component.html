@@ -7,6 +7,6 @@
 
   <div *ngFor="let section of sectionsList">
     {{section.id}}
-    <app-section></app-section>
+    <app-section [section]="section"></app-section>
   </div>
 </div>
