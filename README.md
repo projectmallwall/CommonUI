@@ -11,6 +11,8 @@ Other modules are elements module, section module.
 Stylers and validators components / directives to be included in section module.
 All services and state managers to be included in renderer module as it is the core module and everything 
 will be handled from there.
+Logger / Error handler service.
+Required fields checker.
 
 bootstrap:
 bootstrap for css.
