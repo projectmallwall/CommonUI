@@ -5,14 +5,16 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SectionModule } from '@section/section.module';
-
+import { MessageComponent } from './message/message.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
-  declarations: [BodyComponent, NavBarComponent, HeaderComponent, FooterComponent],
+  declarations: [BodyComponent, NavBarComponent, HeaderComponent, FooterComponent, MessageComponent],
   imports: [
     CommonModule,
-    SectionModule
+    SectionModule,
+    SharedModule
   ]
 })
 export class RendererModule {
