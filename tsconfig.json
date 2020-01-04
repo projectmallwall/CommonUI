@@ -21,7 +21,9 @@
     "paths": {
       "@env": ["src/environments/environment"],
       "@elements/*": ["src/app/elements/*"],
-      "@section/*": ["src/app/section/*"]
+      "@section/*": ["src/app/section/*"],
+      "@renderer/*": ["src/app/renderer/*"],
+      "@shared/*": ["src/app/shared/*"]
     }
   },
   "angularCompilerOptions": {

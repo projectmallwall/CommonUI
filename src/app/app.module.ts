@@ -8,8 +8,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
-import { RendererModule } from './renderer/renderer.module';
-import { ErrorInterceptor } from './shared/services/error.interceptor';
+import { RendererModule } from '@renderer/renderer.module';
+import { ErrorInterceptor } from '@shared/services/error.interceptor';
 
 @NgModule({
   declarations: [
