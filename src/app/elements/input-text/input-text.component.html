@@ -1,1 +1,14 @@
-<p>input-text works!</p>
+<p><label><input
+type=field.input
+(ngModel)=field.value
+name=field.name
+label=field.label
+placeholder=field.placeHolder
+id = field.id
+maxlength=field.maxLength ? field.maxLength : null
+required=field.required
+disabled=field.isDisabled
+(keyup.enter)="eventAction($event)"
+(focus)="eventAction($event)"
+(focusout)="eventAction($event)"
+(mouseenter) ="eventAction($event)"/></label><p>
