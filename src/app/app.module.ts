@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { SharedModule } from './shared/shared.module';
+
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
@@ -7,7 +9,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { RendererModule } from './renderer/renderer.module';
-import { SharedModule } from './shared/shared.module';
 import { ErrorInterceptor } from './shared/services/error.interceptor';
 
 @NgModule({
@@ -16,11 +17,11 @@ import { ErrorInterceptor } from './shared/services/error.interceptor';
   ],
   imports: [
     BrowserModule,
+    SharedModule,
     AppRoutingModule,
     HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    RendererModule,
-    SharedModule
+    RendererModule
   ],
   providers: [ {
       provide: HTTP_INTERCEPTORS,

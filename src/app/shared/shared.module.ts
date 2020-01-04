@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { MessageComponent } from './message/message.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [MessageComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    NgbModule
   ],
-  exports: [NgbModule]
+  exports: [MessageComponent, NgbModule, CommonModule]
 })
 export class SharedModule { }

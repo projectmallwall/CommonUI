@@ -2,5 +2,5 @@
   *ngFor="let message of appMessenger.messages"
   [className]="'bg-danger text-light'"
   [header]="message.header" [autohide]="true" [delay]="message.delay || 5000"
-  (hide)="appMessenger.remove(message)"
+  (hide)="appMessenger.removeMessage(message)"
 >{{message.body}}</ngb-toast>
