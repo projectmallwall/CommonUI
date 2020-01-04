@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { BodyComponent } from './renderer/body/body.component';
-import { HeaderComponent } from './renderer/header/header.component';
-import { NavBarComponent } from './renderer/nav-bar/nav-bar.component';
-import { FooterComponent } from './renderer/footer/footer.component';
+import { BodyComponent } from '@renderer/body/body.component';
+import { HeaderComponent } from '@renderer/header/header.component';
+import { NavBarComponent } from '@renderer/nav-bar/nav-bar.component';
+import { FooterComponent } from '@renderer/footer/footer.component';
 
 
 const routes: Routes = [{
