@@ -19,7 +19,7 @@ export class BodyComponent implements OnInit {
 
   ngOnInit() {
     this.currentUrl = this.router.url;
-    this.coreService.fetchPageStructuralData(this.router.url).subscribe((data) => {
+    this.coreService.fetchPageSectionConfiguration(this.router.url).subscribe((data) => {
       this.sectionsList = data && data.layout;
       console.log('SectionsList'+this.sectionsList);
     }, (err) => {
