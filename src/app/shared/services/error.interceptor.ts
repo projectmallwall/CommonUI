@@ -35,11 +35,11 @@ export class ErrorInterceptor implements HttpInterceptor {
                         errorMessage.body = error.error.message;
                     } else {
                         // server-side error
-                        errorMessage.header = error.status.toString();
-                        errorMessage.body = error.message;
+                        //errorMessage.header = error.status.toString();
+                        errorMessage.body = error.status.toString() + ": " + error.message;
                     }
                   this.messenger.showMessage(errorMessage.header, errorMessage.body);
-                  return throwError("My error message");
+                  return throwError(errorMessage.body);
                 }));
 
     }
