@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { InputTextComponent } from '../../elements/input-text/input-text.component';
+import { FormGroup } from '@angular/forms';
+import { CharTextComponent } from '@elements/input-text/input-text.component';
+import { FormsService } from '../services/forms.service';
 
 @Component({
   selector: 'app-section',
@@ -8,6 +10,7 @@ import { InputTextComponent } from '../../elements/input-text/input-text.compone
 })
 export class SectionComponent implements OnInit {
   @Input('section') section: any;
+  formGroupContainer: FormGroup;
   /*columnStructure: {
     noOfColumn: number,
     classes: {
@@ -21,7 +24,7 @@ export class SectionComponent implements OnInit {
   containSectionChild: boolean;
   requiredParameters: Array<String>;
 
-  constructor() {
+  constructor(private formService: FormsService) {
     this.columnStructure = {};
     this.containSectionChild = false;
     this.requiredParameters = ['col', 'id'];
@@ -29,6 +32,10 @@ export class SectionComponent implements OnInit {
 
   ngOnInit() {
     this.checkForRequiredParameters();
+    this.convertDataToLowerCase();
+    if (this.section.type === 'form') {
+      this.formGroupContainer = this.formService.createForm(this.section.id);
+    }
     this.containSectionChild = this.section.sectionList && this.section.sectionList.length ? true: false;
     this.breakColumnForDevices();
   }
@@ -48,6 +55,10 @@ export class SectionComponent implements OnInit {
     }
 
     return resultArr;
+  }
+
+  private convertDataToLowerCase(): void {
+    this.section.type = this.section.type.toLowerCase();
   }
 
   private checkForRequiredParameters(): void {
@@ -76,6 +87,10 @@ export class SectionComponent implements OnInit {
     if (this.section.col.ratio.lg) {
       this.columnStructure.classes.lg = this.convertColumnRatioIntoClass(this.section.col.ratio.lg.split(':'), 'lg');
     }
+  }
+
+  public clickSubmit(): void {
+    this.formService.getFormList();
   }
 
 }
