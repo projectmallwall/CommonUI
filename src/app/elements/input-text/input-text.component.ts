@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ViewElement } from '../view-element.interface';
-import { FormsService } from '@section/services/forms.service';
+import { FormsService } from '@shared/services/forms.service';
 import { CharField } from '../../form/interfaces/char-field';
 
 @Component({
