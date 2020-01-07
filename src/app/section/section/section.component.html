@@ -1,9 +1,18 @@
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="section.type !== 'form'">
+  <ng-template *ngTemplateOutlet="sectionRow"></ng-template>
+</div>
+
+<form class="container-fluid" [formGroup]="formGroupContainer" *ngIf="section.type === 'form'">
+  <ng-template *ngTemplateOutlet="sectionRow"></ng-template>
+</form>
+
+
+<ng-template #sectionRow >
   <div class="row" *ngIf="!containSectionChild">
     <div ngClass="{{columnStructure.classes.xs[i]}} {{columnStructure.classes.sm[i]}} {{columnStructure.classes.md[i]}} {{columnStructure.classes.lg[i]}}"
         *ngFor="let field of section.fieldList; index as i">
         <!--list of widgets will go here-->
-        <app-input-text *ngIf="field.type === 'text'"></app-input-text>
+        <cui-input-text *ngIf="field.type === 'text'" [data]="field"></cui-input-text>
         <div *ngIf="field.type !== 'text'">{{ field.name }}</div>
     </div>
   </div>
@@ -12,4 +21,7 @@
       <app-section [section]="childSection"></app-section>
     </div>
   </div>
-</div>
+</ng-template>
+
+<button (click)="clickSubmit()">Submit</button>
+

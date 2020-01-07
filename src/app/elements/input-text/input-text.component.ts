@@ -1,18 +1,21 @@
-import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { ViewElement } from '../view-element.interface';
-import {CharField } from '../../form/interfaces/char-field';
-
+import { FormsService } from '@section/services/forms.service';
+import { CharField } from '../../form/interfaces/char-field';
 
 @Component({
   selector: 'cui-input-text',
   templateUrl: './input-text.component.html',
   styleUrls: ['./input-text.component.scss']
 })
+
 export class CharTextComponent implements ViewElement, OnInit {
 
   @Input() field:  CharField;
   @Input() data: any;
   @Input() editMode: boolean;
+  formGroupObj: FormGroup;
   @Output('dataChange') private _dataChange = new EventEmitter<String>();
 
   public dataChange(): EventEmitter<String> {
@@ -29,9 +32,10 @@ export class CharTextComponent implements ViewElement, OnInit {
     }
   }
 
-  constructor() { }
+  constructor(private formService: FormsService) { }
 
   ngOnInit(): void {
+    this.formGroupObj = this.formService.createInputControl(this.data.formName, this.data.name, []);
   }
 
 
