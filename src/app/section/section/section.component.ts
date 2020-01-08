@@ -10,6 +10,7 @@ import { FormsService } from '@shared/services/forms.service';
 })
 export class SectionComponent implements OnInit {
   @Input('section') section: any;
+  @Input('fields') fields: any;
   formGroupContainer: FormGroup;
   /*columnStructure: {
     noOfColumn: number,
