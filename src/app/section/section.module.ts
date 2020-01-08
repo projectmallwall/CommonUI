@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '@shared/shared.module';
 
 import { ElementsModule } from '../elements/elements.module';
 import { SectionComponent } from './section/section.component';
@@ -10,9 +9,7 @@ import { SectionComponent } from './section/section.component';
 @NgModule({
   declarations: [SectionComponent],
   imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
+    SharedModule,
     ElementsModule
   ],
   exports: [SectionComponent]
