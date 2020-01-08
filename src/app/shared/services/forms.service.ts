@@ -5,7 +5,7 @@ import { FormGroup, FormControl } from '@angular/forms';
   providedIn: 'root'
 })
 export class FormsService {
-  formsArr: [];
+  private formsArr: [];
 
   constructor() {
     this.formsArr = [];

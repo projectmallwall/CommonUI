@@ -4,7 +4,6 @@ import { SharedModule } from './shared/shared.module';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,9 +21,7 @@ import { ErrorInterceptor } from '@shared/services/error.interceptor';
     AppRoutingModule,
     HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    RendererModule,
-    FormsModule,
-    ReactiveFormsModule
+    RendererModule
   ],
   providers: [ {
       provide: HTTP_INTERCEPTORS,

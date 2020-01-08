@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
-import { FormsService } from './section/services/forms.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  providers: [FormsService]
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'CommonUI';
