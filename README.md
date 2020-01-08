@@ -14,6 +14,9 @@ will be handled from there.
 Logger / Error handler service.
 Required fields checker.
 
+To do Vinay - Seperate field.json from section.json
+Add default css to remove all margins and paddings.
+
 bootstrap:
 bootstrap for css.
 ngx-bootstrap supports Bootstrap 3 and 4.

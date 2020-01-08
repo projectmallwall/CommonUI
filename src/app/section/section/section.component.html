@@ -15,13 +15,12 @@
         <cui-input-text *ngIf="field.type === 'text'" [data]="field"></cui-input-text>
         <div *ngIf="field.type !== 'text'">{{ field.name }}</div>
     </div>
+    <button (click)="clickSubmit()">Submit</button>
   </div>
-  <div *ngIf="containSectionChild">
+  <div class="row" *ngIf="containSectionChild">
     <div *ngFor="let childSection of section.sectionList; index as i">
       <app-section [section]="childSection"></app-section>
     </div>
   </div>
 </ng-template>
-
-<button (click)="clickSubmit()">Submit</button>
 
