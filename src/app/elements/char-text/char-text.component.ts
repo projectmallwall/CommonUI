@@ -12,8 +12,8 @@ import { CharField } from '../../form/interfaces/char-field';
 
 export class CharTextComponent implements ViewElement, OnInit {
 
-  @Input() field:  CharField;
-  @Input() data: any;
+ // @Input() field:  CharField;
+  @Input() data: CharField;
   @Input() editMode: boolean;
   formGroupObj: FormGroup;
   @Output('dataChange') private _dataChange = new EventEmitter<String>();

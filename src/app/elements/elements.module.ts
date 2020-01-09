@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '@shared/shared.module';
-import { CharTextComponent } from './input-text/input-text.component';
+import { CharTextComponent } from './char-text/char-text.component';
 
 
 @NgModule({
