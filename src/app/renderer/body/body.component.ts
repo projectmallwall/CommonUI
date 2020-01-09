@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, forkJoin } from 'rxjs';
 import { SectionComponent } from '@section/section/section.component';
 import { CoreService } from '../services/core.service';
 
@@ -14,13 +14,16 @@ export class BodyComponent implements OnInit {
   currentUrl = '';
   pageDoesNotExist = false;
   sectionsList = [];
+  fields = [];
 
   constructor(private router: Router, private coreService: CoreService) { }
 
   ngOnInit() {
     this.currentUrl = this.router.url;
-    this.coreService.fetchPageSectionConfiguration(this.router.url).subscribe((data) => {
-      this.sectionsList = data && data.layout;
+    forkJoin([this.coreService.fetchPageSectionConfiguration(this.router.url),
+      this.coreService.fetchPageFieldsConfiguration(this.router.url)]).subscribe((data) => {
+      this.sectionsList = data[0] && data[0].layout;
+      this.fields = data[1];
       console.log('SectionsList'+this.sectionsList);
     }, (err) => {
       this.pageDoesNotExist = true;
