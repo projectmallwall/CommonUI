@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { CharTextComponent } from '@elements/input-text/input-text.component';
+import { CharTextComponent } from '@elements/char-text/char-text.component';
 import { FormsService } from '@shared/services/forms.service';
 
 @Component({
