@@ -5,15 +5,15 @@ import { FormsService } from '@shared/services/forms.service';
 import { CharField } from '../../form/interfaces/char-field';
 
 @Component({
-  selector: 'cui-input-text',
-  templateUrl: './input-text.component.html',
-  styleUrls: ['./input-text.component.scss']
+  selector: 'cui-char-text',
+  templateUrl: './char-text.component.html',
+  styleUrls: ['./char-text.component.scss']
 })
 
 export class CharTextComponent implements ViewElement, OnInit {
 
-  @Input() field:  CharField;
-  @Input() data: any;
+ // @Input() field:  CharField;
+  @Input() data: CharField;
   @Input() editMode: boolean;
   formGroupObj: FormGroup;
   @Output('dataChange') private _dataChange = new EventEmitter<String>();

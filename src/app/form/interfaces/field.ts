@@ -1,5 +1,6 @@
 export class Field<T> {
   inputType: string
+  formName: string;
   value: T;
   name: string;
   id: string;
