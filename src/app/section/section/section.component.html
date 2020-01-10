@@ -12,7 +12,7 @@
     <div ngClass="{{columnStructure.classes.xs[i]}} {{columnStructure.classes.sm[i]}} {{columnStructure.classes.md[i]}} {{columnStructure.classes.lg[i]}}"
         *ngFor="let field of fields[section.id]; index as i">
         <!--list of widgets will go here-->
-        <cui-char-text *ngIf="field.type === 'text'" [data]="field"></cui-char-text>
+        <cui-char-text *ngIf="field.type === 'text'" [fieldObj]="field"></cui-char-text>
         <div *ngIf="field.type !== 'text'">{{ field.name }}</div>
     </div>
     <button (click)="clickSubmit()">Submit</button>
