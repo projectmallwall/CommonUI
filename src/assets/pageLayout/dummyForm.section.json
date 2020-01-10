@@ -1,0 +1,134 @@
+{
+  "layout": [
+    {
+      "id": "main-form",
+      "type": "form",
+      "col": {
+        "count": 1,
+        "ratio": {
+          "lg": "12",
+          "md": "12",
+          "sm": "12",
+          "xs": "12"
+        },
+        "autoPlace": "false"
+      },
+      "dataUrl" : "",
+      "fieldUrl" : "",
+      "sectionList": [{
+        "id": "customer-info-label",
+        "type": "content",
+        "col": {
+          "count": 1,
+          "ratio": {
+            "lg": "12",
+            "md": "12",
+            "sm": "12",
+            "xs": "12"
+          },
+          "autoPlace": "true/false"
+        },
+        "dataUrl" : "",
+        "fieldUrl" : ""
+      },
+      {
+        "id": "name",
+        "type": "content",
+        "col": {
+          "count": 2,
+          "ratio": {
+            "lg": "6:6",
+            "md": "6:6",
+            "sm": "6:6",
+            "xs": "12:12"
+          },
+          "autoPlace": "true/false"
+        }
+      },
+      {
+        "id": "address",
+        "type": "content",
+        "col": {
+          "count": 2,
+          "ratio": {
+            "lg": "8:4",
+            "md": "8:4",
+            "sm": "7:5",
+            "xs": "12:12"
+          },
+          "autoPlace": "true/false"
+        }
+      },
+      {
+        "id": "state-country",
+        "type": "content",
+        "col": {
+          "count": 2,
+          "ratio": {
+            "lg": "6:6",
+            "md": "6:6",
+            "sm": "6:6",
+            "xs": "12:12"
+          },
+          "autoPlace": "true/false"
+        }
+      },
+      {
+        "id": "description",
+        "type": "content",
+        "col": {
+            "count": 1,
+            "ratio": {
+              "lg": "12",
+              "md": "12",
+              "sm": "12",
+              "xs": "12"
+            },
+            "autoPlace": "true/false"
+        }
+      },
+      {
+        "id": "hobbies",
+        "type": "content",
+        "col": {
+            "count": 1,
+            "ratio": {
+              "lg": "12",
+              "md": "12",
+              "sm": "12",
+              "xs": "12"
+            },
+            "autoPlace": "true/false"
+        }
+      },
+      {
+        "id": "gender",
+        "type": "content",
+        "col": {
+            "count": 1,
+            "ratio": {
+              "lg": "12",
+              "md": "12",
+              "sm": "12",
+              "xs": "12"
+            },
+            "autoPlace": "true/false"
+        }
+      },
+      {
+        "id": "reset-submit",
+        "type": "content",
+        "col": {
+            "count": 1,
+            "ratio": {
+              "lg": "6:6",
+              "md": "6:6",
+              "sm": "6:6",
+              "xs": "6:6"
+            },
+            "autoPlace": "true/false"
+        }
+      }]
+     }
+  ]
+}
