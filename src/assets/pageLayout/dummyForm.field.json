@@ -1,0 +1,89 @@
+{
+
+  "customer-info-label": [
+    {
+        "type": "statictext",
+        "value": "Customer Information"
+    }
+  ],
+  "name": [
+    {
+      "name": "firstName",
+      "type": "text",
+      "accessor": "firstName",
+      "formName": "main-form"
+    },
+    {
+      "name": "lastName",
+      "type": "text",
+      "accessor": "lastName",
+      "formName": "main-form"
+    }
+  ],
+  "address": [
+    {
+      "name": "streetName",
+      "type": "text",
+      "accessor": "streetName",
+      "formName": "main-form"
+    },
+    {
+      "name": "pinCode",
+      "type": "text",
+      "accessor": "pinCode",
+      "formName": "main-form"
+    }
+  ],
+  "description": [
+    {
+      "name": "description",
+      "type": "textarea",
+      "accessor": "description",
+      "formName": "main-form"
+    }
+  ],
+  "hobbies": [
+    {
+      "name": "hobbies",
+      "type": "checkbox",
+      "accessor": "hobbies",
+      "formName": "main-form"
+    }
+  ],
+  "gender": [
+    {
+      "name": "gender",
+      "type": "radio",
+      "accessor": "gender",
+      "formName": "main-form"
+    }
+  ],
+  "state-country": [
+    {
+      "name": "state",
+      "type": "dropdown",
+      "accessor": "state",
+      "formName": "main-form"
+    },
+    {
+      "name": "country",
+      "type": "dropdown",
+      "accessor": "country",
+      "formName": "main-form"
+    }
+  ],
+  "reset-submit": [
+    {
+      "name": "reset",
+      "type": "reset",
+      "accessor": "reset",
+      "formName": "main-form"
+    },
+    {
+      "name": "submit",
+      "type": "submit",
+      "accessor": "submit",
+      "formName": "main-form"
+    }
+  ]
+}
