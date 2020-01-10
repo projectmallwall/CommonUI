@@ -12,10 +12,10 @@ import { CharField } from '../../form/interfaces/char-field';
 
 export class CharTextComponent implements ViewElement, OnInit {
 
- // @Input() field:  CharField;
-  @Input() data: CharField;
+  @Input() fieldObj: CharField;
   @Input() editMode: boolean;
   formGroupObj: FormGroup;
+  data: any;
   @Output('dataChange') private _dataChange = new EventEmitter<String>();
 
   public dataChange(): EventEmitter<String> {
@@ -35,7 +35,7 @@ export class CharTextComponent implements ViewElement, OnInit {
   constructor(private formService: FormsService) { }
 
   ngOnInit(): void {
-    this.formGroupObj = this.formService.createInputControl(this.data.formName, this.data.name, []);
+    this.formGroupObj = this.formService.createInputControl(this.fieldObj.formName, this.fieldObj.name, []);
   }
 
 
