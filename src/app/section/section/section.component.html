@@ -15,7 +15,7 @@
         <cui-char-text *ngIf="field.type === 'text'" [fieldObj]="field"></cui-char-text>
         <div *ngIf="field.type !== 'text'">{{ field.name }}</div>
     </div>
-    <button (click)="clickSubmit()">Submit</button>
+    <cui-button editMode="false"></cui-button>
   </div>
   <div class="row" *ngIf="containSectionChild">
     <div *ngFor="let childSection of section.sectionList; index as i">

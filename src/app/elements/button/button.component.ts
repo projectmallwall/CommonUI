@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { ViewElement } from '../view-element.interface';
 import {Button } from '../../form/interfaces/button';
+import { FormsService } from '@shared/services/forms.service';
 
 
 @Component({
@@ -8,16 +9,10 @@ import {Button } from '../../form/interfaces/button';
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.sass'],
 })
-export class ButtonComponent implements ViewElement, OnInit {
+export class ButtonComponent implements OnInit {
 
-  @Input() fieldObj:  Button;
-  @Input() editMode: boolean;
-  @Output('dataChange') private _dataChange = new EventEmitter<String>();
-  data: any;
-
-  public dataChange(): EventEmitter<String> {
-    return this._dataChange;
-  }
+  @Input() editMode?: boolean;
+  @Input() formName?: String;
 
   public eventAction($event) {
     if (event.type === 'submit') {
@@ -25,14 +20,15 @@ export class ButtonComponent implements ViewElement, OnInit {
     } else if (event.type === 'focusout') {
 
     } else if (event.type === 'click') {
+      this.formService.saveForm(this.formName);
 
     }
   }
 
-  constructor() { }
+  constructor(private formService: FormsService) { }
 
   ngOnInit(): void {
-
+    // this.formGroupObj = this.formService.createInputControl(this.fieldObj.formName, this.fieldObj.name, []);
   }
 
 

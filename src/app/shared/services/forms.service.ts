@@ -27,4 +27,8 @@ export class FormsService {
   public getFormList(): [] {
       return this.formsArr;
   }
+
+  public saveForm(formName: String) {
+
+  }
 }
