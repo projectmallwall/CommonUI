@@ -16,7 +16,7 @@
         <cui-dropdown-list *ngIf="field.type === 'dropdown'" [fieldObj]="field" [optionList]="field.options"></cui-dropdown-list>
         <div *ngIf="field.type !== 'text' && field.type !== 'dropdown'">{{ field.name }}</div>
     </div>
-    <button (click)="clickSubmit()">Submit</button>
+    <cui-button editMode="false"></cui-button>
   </div>
   <div class="row" *ngIf="containSectionChild">
     <div *ngFor="let childSection of section.sectionList; index as i">

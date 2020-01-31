@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, ControlValueAccessor } from '@angular/forms';
 import { ViewElement } from '../view-element.interface';
 import { FormsService } from '@shared/services/forms.service';
 import { CharField } from '../../form/interfaces/char-field';
@@ -10,7 +10,7 @@ import { CharField } from '../../form/interfaces/char-field';
   styleUrls: ['./char-text.component.scss']
 })
 
-export class CharTextComponent implements ViewElement, OnInit {
+export class CharTextComponent implements ViewElement, OnInit, ControlValueAccessor{
 
   @Input() fieldObj: CharField;
   @Input() editMode: boolean;
@@ -36,6 +36,18 @@ export class CharTextComponent implements ViewElement, OnInit {
 
   ngOnInit(): void {
     this.formGroupObj = this.formService.createInputControl(this.fieldObj.formName, this.fieldObj.name, []);
+  }
+
+  registerOnChange() {
+
+  }
+
+  registerOnTouched() {
+
+  }
+
+  writeValue() {
+
   }
 
 

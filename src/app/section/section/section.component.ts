@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { CharTextComponent } from '@elements/char-text/char-text.component';
 import { DropdownListComponent } from '@elements/dropdown-list/dropdown-list.component';
+import { ButtonComponent } from '@elements/button/button.component'
 import { FormsService } from '@shared/services/forms.service';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
