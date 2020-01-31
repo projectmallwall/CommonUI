@@ -13,7 +13,8 @@
         *ngFor="let field of fields[section.id]; index as i">
         <!--list of widgets will go here-->
         <cui-char-text *ngIf="field.type === 'text'" [fieldObj]="field"></cui-char-text>
-        <div *ngIf="field.type !== 'text'">{{ field.name }}</div>
+        <cui-dropdown-list *ngIf="field.type === 'dropdown'" [fieldObj]="field" [optionList]="field.options"></cui-dropdown-list>
+        <div *ngIf="field.type !== 'text' && field.type !== 'dropdown'">{{ field.name }}</div>
     </div>
     <cui-button editMode="false"></cui-button>
   </div>

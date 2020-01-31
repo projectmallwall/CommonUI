@@ -4,7 +4,7 @@ export class Button extends Field<string> {
   buttonType : string;
   buttonSize: string;
   buttonIcon: string;
-  disabbled: boolean;
+  disabled: boolean;
 
   constructor(options : {
     name?: string,
@@ -13,12 +13,12 @@ export class Button extends Field<string> {
     buttonType?: string,
     id?: string,
     buttonIcon?: string,
-    disbled?: boolean
+    disabled?: boolean
   } = {}) {
     super(options);
     this.buttonType = options.buttonType;
     this.buttonIcon = options.buttonIcon;
-    this.disabbled = options.disbled;
+    this.disabled = options.disabled;
   }
   setFocus() {
     const ele = document.getElementById(this.id.toString());

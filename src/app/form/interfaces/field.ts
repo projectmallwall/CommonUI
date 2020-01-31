@@ -8,7 +8,7 @@ export class Field<T> {
   required: boolean;
   label: string;
   readonly: boolean;
-  disabbled: boolean;
+  disabled: boolean;
   visible: boolean;
   width: number;
   height: number;
