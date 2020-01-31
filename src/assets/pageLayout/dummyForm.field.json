@@ -63,7 +63,12 @@
       "name": "state",
       "type": "dropdown",
       "accessor": "state",
-      "formName": "main-form"
+      "formName": "main-form",
+      "options": [
+        {"name": "Goa", "value": "Goa"},
+        {"name": "Kerala", "value": "Kerala"},
+        {"name": "Bihar", "value": "Bihar"}
+        ]
     },
     {
       "name": "country",

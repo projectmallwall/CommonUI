@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AppMessageService {
-
+  //TODO: Convert below array to observable
   messages: any[] = [];
 
   showMessage (header: string, body: string) {
